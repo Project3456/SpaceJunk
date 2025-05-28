@@ -31,3 +31,5 @@ sure you have Python 3.x installed.
 Run the script:
 python space_junk_collector.pyRequirementsPython 3.xFuture IdeasAdd new actions like repairing the ship or trading junk.Create a graphical version using Pygame or Arcade.Include random events like finding rare items or losing fuel.AuthorCreated by Project
 a 12-year-old coder learning Python and aiming to work at Google!
+
+![Space](https://cdn.pixabay.com/photo/2020/01/28/11/14/galaxy-4799471_960_720.jpg)
