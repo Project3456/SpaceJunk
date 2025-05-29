@@ -8,22 +8,25 @@ Space Junk Collector is a Python project where you control a spaceship that coll
 - Collect junk if the spaceship has enough fuel (uses 5 fuel units per junk).
 - Check the spaceship’s status (name, fuel, and inventory).
 - Easy-to-understand code for learning purposes.
+  
 
 ## How It Works
 The Space class represents a spaceship with these attributes:
 - name: The spaceship’s name.
 - fuel: Fuel level (0–100, defaults to 50 if invalid).
-- inventory: A list to store collected junk.
+- inventory: A dictionary to store junk types (e.g., {"metal": 1, "plastic": 1}).
 
 ### Methods
 - show_status(): Shows the spaceship’s name, fuel, and inventory.
 - collect_junk(): Adds "junk" to the inventory if there’s enough fuel (at least 10 units).
+- trade_junk(): Trades junk for 10 fuel units if enough junk is available.
 
 ## Example Code
 `python
 ship = Space("Star", 50)
 print(ship.collect_junk())  # Output: Junk collected!
 print(ship.show_status())   # Output: Ship: Star, Fuel: 45, Inventory: ['junk']
+print(ship.trade_junk())           # Star - Traded junk and got 10 fuel, fuel: 55
 
 How to RunClone the repository:
 git clone https://github.com/Project3456/SpaceJunk.gitMake
