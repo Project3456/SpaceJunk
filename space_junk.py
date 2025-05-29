@@ -2,7 +2,7 @@
     def __init__(self, name, fuel, inventory = None):
         self.name = name
         self.fuel = fuel if isinstance(fuel, int) and 0 <= fuel <= 100 else 50
-        self.inventory = []
+        self.inventory = {}
 
     def show_status(self):
         return f"Корабль: {self.name},Топливо:{self.fuel},Мусор:{self.inventory}"
@@ -10,13 +10,25 @@
     def collect_junk(self,junk):
         if self.fuel >= 10:
             self.fuel -= 5
-            self.inventory.append("junk")
+            self.inventory["metal"] = 0 + 1
+            self.inventory["plastic"] = 0 + 1
             return f"Корабль: {self.name}, собрал обломок, топлива {self.fuel}!"
         else:
             return "Недостаточно топлива!"
+    
+    def trade_junk(self):
+        if self.inventory["metal"] >= 1 and self.inventory["plastic"] >= 1 or self.inventory["metal"] >= 2 or self.inventory["plastic"] >= 2:
+            self.inventory.pop("metal")
+            self.inventory.pop("plastic")
+            self.fuel += 10
+            return f"{self.name} - Сдал мусор и получил 10 топлива количиство топлива: {self.fuel}"
+        else:
+            return f"У {self.name} - Недостаточно мусора"
+        
 
 
 ## test
 ship = Space("Звезда", 50)
 print(ship.collect_junk("обломок"))
 print(ship.show_status())
+print(ship.trade_junk())
