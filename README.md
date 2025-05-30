@@ -36,3 +36,7 @@ python space_junk_collector.pyRequirementsPython 3.xFuture IdeasAdd new actions 
 a 12-year-old coder learning Python and aiming to work at Google!
 
 ![Space](https://cdn.pixabay.com/photo/2020/01/28/11/14/galaxy-4799471_960_720.jpg)
+
+UPDATE:
+
+Added two new methods to manage junk in Space Junk Collector.
