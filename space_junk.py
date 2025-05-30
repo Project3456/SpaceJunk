@@ -25,10 +25,29 @@
         else:
             return f"У {self.name} - Недостаточно мусора"
         
-
-
+    def add_rare_item(self):
+        if self.fuel >= 15:
+            self.fuel -= 15
+            self.inventory["rare_item"] = 1
+            return f"Корабль: {self.name} - Получил Rare придмет за 15 топливо! {self.inventory}"
+        else:
+            return "Недостаточно топлива для обмена на Rare"
+        
+    def check_inventory(self):
+        count_metal = self.inventory["metal"]
+        return f"У корабля {self.name} количиство: {count_metal} тип: metal"
+        
+        count_plastic = self.inventory["plastic"]
+        return f"У корабля {self.name} количиство: {count_plastic} тип: plastic"
+    
+        count_rare = self.inventory["rare_item"]
+        return f"У корабля {self.name} количиство: {count_rare} тип: rare_item"
+            
 ## test
 ship = Space("Звезда", 50)
 print(ship.collect_junk("обломок"))
 print(ship.show_status())
+print(ship.check_inventory())
 print(ship.trade_junk())
+print(ship.add_rare_item())
+
